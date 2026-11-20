@@ -2,7 +2,7 @@
 
 **Proof of Work. Built in Java. Built in South Africa.**
 
-OZIEL OS is Asenath Oziel Tyhaliti's personal proof and career operating system: a production-style Java full-stack platform for projects, build logs, skills, community impact and opportunity tracking.
+OZIEL OS is Asenath Oziel Tyhaliti's personal proof and career operating system: a production-style Java full-stack platform for projects, build logs, skills, private-by-default certification evidence, community impact, opportunity tracking, and postgraduate Honours and Advanced Diploma pathways.
 
 ## Stack
 

@@ -14,3 +14,4 @@ api.interceptors.request.use((config) => {
 export type Project = { id:number; title:string; slug:string; problem:string; solution:string; techStack:string[]; status:'LIVE'|'IN_PROGRESS'|'CONCEPT'; demoUrl?:string; githubUrl?:string; imageUrl?:string; impact:string; featured:boolean; createdAt:string }
 export type BuildLog = { id:number; title:string; content:string; category:'CODE'|'LEARNING'|'CAREER'|'LIFE'; tags:string; createdAt:string; imageUrl?:string }
 export type Opportunity = { id:number; name:string; company:string; type:string; closingDate:string|null; status:string; link:string }
+export type Certification = { id:number; name:string; issuer:string; category:'JAVA'|'CLOUD'|'DATA'|'SECURITY'|'PROFESSIONAL'|'OTHER'; awardedOn:string; expiresOn:string|null; credentialUrl:string|null; credentialId:string|null; publiclyVisible:boolean }
