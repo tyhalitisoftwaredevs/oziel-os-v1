@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ozielos
+      POSTGRES_USER: oziel
+      POSTGRES_PASSWORD: oziel
+    ports: ["5432:5432"]
+    volumes: [oziel_pg:/var/lib/postgresql/data]
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: jdbc:postgresql://db:5432/ozielos
+      DATABASE_USERNAME: oziel
+      DATABASE_PASSWORD: oziel
+      JWT_SECRET: replace-with-a-long-random-production-secret
+      ADMIN_PASSWORD: admin123
+      SMTP_HOST: ${SMTP_HOST:-}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USERNAME: ${SMTP_USERNAME:-}
+      SMTP_PASSWORD: ${SMTP_PASSWORD:-}
+      NOTIFICATIONS_EMAIL_TO: ${NOTIFICATIONS_EMAIL_TO:-}
+      NOTIFICATIONS_EMAIL_FROM: ${NOTIFICATIONS_EMAIL_FROM:-}
+      NOTIFICATIONS_EMAIL_ENABLED: ${NOTIFICATIONS_EMAIL_ENABLED:-true}
+      NOTIFICATIONS_SMS_ENABLED: ${NOTIFICATIONS_SMS_ENABLED:-false}
+      NOTIFICATIONS_SMS_TO: ${NOTIFICATIONS_SMS_TO:-}
+      TWILIO_ACCOUNT_SID: ${TWILIO_ACCOUNT_SID:-}
+      TWILIO_AUTH_TOKEN: ${TWILIO_AUTH_TOKEN:-}
+      TWILIO_FROM_NUMBER: ${TWILIO_FROM_NUMBER:-}
+    ports: ["8080:8080"]
+    depends_on: [db]
+volumes:
+  oziel_pg:

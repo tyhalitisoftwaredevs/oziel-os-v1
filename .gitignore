@@ -1,0 +1,16 @@
+node_modules/
+target/
+*.log
+.env
+cat > .gitignore << 'EOF'
+node_modules/
+target/
+*.log
+.env
+
+.env.local
+dist/
+build/
+.idea/
+.vscode/
+*.class
